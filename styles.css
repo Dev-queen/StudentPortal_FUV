@@ -1,0 +1,295 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f4f6f9;
+  color: #333;
+}
+p {
+  font-size: 16px;
+  line-height: 2.6;
+  font-weight: 500;
+}
+li {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ================= LOGIN ================= */
+.login {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #0686e1;
+  color: white;
+}
+
+.login-form {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  width: 300px;
+}
+
+.login-form input,
+.login-form select,
+.login-form button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.login-form button {
+  background: #0686e1;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* ================= DASHBOARD ================= */
+/* Dashboards are hidden by default; the active one receives layout */
+.dashboard {
+  display: none;
+}
+
+.dashboard.active {
+  display: flex;
+  margin-top: 40px;
+}
+
+/* .dashboard {
+    display: none;
+} */
+
+/* Sidebar */
+.sidebar {
+  width: 200px;
+  background: #1e3799;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.sidebar li {
+  margin: 10px 0;
+}
+
+.sidebar .sidebar-btn {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+.sidebar .sidebar-btn:hover {
+  text-decoration: underline;
+}
+
+/* Content */
+.content {
+  flex: 1;
+  padding: 30px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.card h3 {
+  margin-bottom: 5px;
+}
+
+.card input,
+.card textarea,
+.card button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px;
+}
+
+.card button {
+  background: #1e3799;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* ================= PROFILE TOP (Student) ================= */
+.profile-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.avatar-wrapper {
+  position: relative;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  padding: 22px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+#studentProfileInput {
+  display: none;
+}
+
+.upload-btn {
+  display: inline-block;
+  margin-top: 8px;
+  background: #1e3799;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.profile-info .small {
+  color: #666;
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+/* ================= HEADER ================= */
+.portal-header {
+  background: linear-gradient(90deg, #1e3799, #4a69bd);
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+/* ================= HEADER ================= */
+.portal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #1e3799, #4a69bd);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+.header-left h1 {
+  font-size: 24px;
+}
+
+.header-left p {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Notification */
+.notification {
+  position: relative;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: red;
+  color: white;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+/* Buttons & icons */
+.icon-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: white;
+}
+
+.profile-icon {
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Logout */
+.logout-btn {
+  background: white;
+  color: #1e3799;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ================= DARK MODE ================= */
+.dark-mode {
+  background: #1e1e1e;
+  color: #f1f1f1;
+}
+
+.dark-mode .card {
+  background: #2c2c2c;
+  color: white;
+}
+
+.dark-mode .sidebar {
+  background: #111;
+}
+
+.portal-header h1 {
+  font-size: 26px;
+  margin-bottom: 5px;
+}
+
+.portal-header p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .dashboard.active {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .profile-top {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>University Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ================= LOGIN SECTION ================= -->
+    <section class="login" id="loginSection">
+      <h1>University Portal Login</h1>
+        <br>
+      <form class="login-form" onsubmit="login(event)">
+        <select id="role">
+          <option value="student">Student</option>
+          <option value="teacher">Teacher</option>
+        </select>
+
+        <input
+          type="email"
+          id="email"
+          placeholder="University Email"
+          
+        />
+        <input type="password" id="password" placeholder="Password" required />
+
+        <button type="submit">Login</button>
+      </form>
+    </section>
+
+    <!-- ================= STUDENT DASHBOARD ================= -->
+    <section id="studentDashboard" class="dashboard">
+      <aside class="sidebar">
+        <h2>Student</h2>
+        <ul>
+          <li><button class="sidebar-btn" onclick="refreshStudentDashboard()">Dashboard</button></li>
+          <li><button class="sidebar-btn" onclick="goToAssignments()">Assignments</button></li>
+          <li>Profile</li>
+        </ul>
+      </aside>
+
+      <main class="content">
+        <header class="portal-header">
+          <div class="header-left">
+            <h1>University Portal</h1>
+            <p>Academic Management System</p>
+          </div>
+
+          <div class="header-right">
+            <!-- Notification -->
+            <div class="notification">
+              🔔
+              <span class="badge">3</span>
+            </div>
+
+            <!-- Dark mode toggle -->
+            <button class="icon-btn" onclick="toggleDarkMode()">🌙</button>
+
+            <!-- Profile icon -->
+            <div class="profile-icon">👤</div>
+
+            <!-- Logout -->
+            <button class="logout-btn" onclick="logout()">Logout</button>
+          </div>
+        </header>
+
+        <div class="profile-info">
+          <h2>Student Dashboard</h2>
+          <p class="small">Welcome, Student</p>
+        </div>
+        <div class="profile-top">
+          <div class="avatar-wrapper">
+            <img
+              id="studentProfileImg"
+              src="https://via.placeholder.com/150"
+              alt="Profile"
+              class="avatar"
+            />
+            <label for="studentProfileInput" class="upload-btn">Change</label>
+            <input type="file" id="studentProfileInput" accept="image/*" />
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Submit Assignment</h3>
+          <form>
+            <input type="file" />
+            <button>Upload</button>
+          </form>
+        </div>
+        <div class="card">
+          <h3>Announcements</h3>
+          <br>
+          <p>🔷Midterm Exams start next week.</p>
+          
+          <p>⚠️Portal maintenance on Friday.</p>
+        </div>
+
+        <div id="submittedAssignments" class="card">
+          <h3>Submitted Assignments</h3>
+          <br>
+          <ul>
+            <li>Math_Assignment.pdf</li>
+            <li>Networks_Project.pdf</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Profile</h3>
+          <input type="file" />
+        </div>
+      </main>
+    </section>
+
+    <!-- ================= TEACHER DASHBOARD ================= -->
+    <section id="teacherDashboard" class="dashboard">
+      <aside class="sidebar">
+        <h2>Teacher</h2>
+        <ul>
+          <li>Dashboard</li>
+          <li>Materials</li>
+          <li>Profile</li>
+        </ul>
+      </aside>
+
+      <main class="content">
+        <header class="portal-header">
+          <div class="header-left">
+            <h1>University Portal</h1>
+            <p>Academic Management System</p>
+          </div>
+
+          <div class="header-right">
+            <!-- Notification -->
+            <div class="notification">
+              🔔
+              <span class="badge">3</span>
+            </div>
+
+            <!-- Dark mode toggle -->
+            <button class="icon-btn" onclick="toggleDarkMode()">🌙</button>
+
+            <!-- Profile icon -->
+            <div class="profile-icon">👤</div>
+
+            <!-- Logout -->
+            <button class="logout-btn" onclick="logout()">Logout</button>
+          </div>
+        </header>
+
+        <h2>Teacher Dashboard</h2>
+        <br>
+        <div class="card">
+          <h3>Upload Course Material</h3>
+          <form>
+            <input type="file" />
+            <button>Upload</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3>Uploaded Materials</h3>
+          <ul>
+            <li>Lecture1.pdf</li>
+            <li>Lecture2.pptx</li>
+          </ul>
+        </div>
+        
+        <div class="card">
+          <h3>Post Announcement</h3>
+          <textarea placeholder="Write announcement..."></textarea>
+          <button>Post</button>
+        </div>
+        
+        <div class="card">
+          <h3>Profile</h3>
+          <input type="file" />
+        </div>
+      </main>
+    
+    <script src="main.js"></script>
+  </body>
+</html>
